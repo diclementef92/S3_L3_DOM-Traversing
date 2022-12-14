@@ -193,19 +193,30 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-    const generateTable = function () {
+    const generateTable = function (headNames) {
+      const tableDiv = document.querySelector("#tableArea");
 
+      let table = document.createElement("table");
+      let tableHead = table.createTHead();
+      let tableBody = table.createTBody();
 
+      //per ogni headName creo un th e lo aggiungo all' header della tabella
+      headNames.forEach(label => tableHead.appendChild(document.createElement("th")).textContent = label);
+      tableDiv.appendChild(table);
     }
+    generateTable(["immagine", "nome prodotto", "quantità", "prezzo"]);
 
     /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-    const addRow = function () {
-
+    const addRow = function (row) {
+      const tableBody = document.querySelector("#tableArea table tbody");
+      // row.forEach(label => tableHead.appendChild(document.createElement("th")).textContent = label);
+      row.forEach(cell => tableBody.appendChild(document.createElement("td")).innerHTML = cell);
 
     }
+    addRow(["<img src=''>", "pc", "1", "500"]);
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
