@@ -216,16 +216,17 @@
       row.forEach(cell => tableRow.appendChild(document.createElement("td")).innerHTML = cell);
     }
     addRow(['<img src="./img/foto1.jpg" alt="pc" style="width:150px">', "pc", "1", "500"]);
-    // addRow(['<img src="./img/foto2.jpg" alt="pc" style="width:150px">', "pc", "1", "500"]);
+    addRow(['<img src="./img/foto1.jpg" alt="pc" style="width:150px">', "pc", "1", "500"]);
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
     const hideAllImages = function () {
-
-
+      const tableImgs = document.querySelectorAll("#tableArea table img");
+      tableImgs.forEach(elem => elem.style.display = "none")
     }
+    // hideAllImages();
 
     /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
