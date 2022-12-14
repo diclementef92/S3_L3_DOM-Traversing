@@ -213,10 +213,10 @@
     const addRow = function (row) {
       const tableBody = document.querySelector("#tableArea table tbody");
       // row.forEach(label => tableHead.appendChild(document.createElement("th")).textContent = label);
-      row.forEach(cell => tableBody.appendChild(document.createElement("td")).innerHTML = cell);
+      row.forEach(cell => tableBody.appendChild(document.createElement("td")).textContent = cell);
 
     }
-    addRow(["<img src=''>", "pc", "1", "500"]);
+    addRow(['immagine', "pc", "1", "500"]);
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
