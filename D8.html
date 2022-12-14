@@ -69,7 +69,6 @@
   </div>
 
   <div id="tableArea"></div>
-
   <footer>
     <h3>DOM Manipulation is super <a
         href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Manipulating_documents">AWESOME!</a>
@@ -93,7 +92,7 @@
       let title = document.querySelector("h1");
       title.classList.add("myHeading");
     }
-    // addClassToTitle();
+    addClassToTitle();
 
     /* ESERCIZIO 3
        Scrivi una funzione per che cambi il testo dei p figli di un div
@@ -212,11 +211,12 @@
 
     const addRow = function (row) {
       const tableBody = document.querySelector("#tableArea table tbody");
-      // row.forEach(label => tableHead.appendChild(document.createElement("th")).textContent = label);
-      row.forEach(cell => tableBody.appendChild(document.createElement("td")).textContent = cell);
-
+      const tableRow = document.createElement("tr");
+      tableBody.appendChild(tableRow);
+      row.forEach(cell => tableRow.appendChild(document.createElement("td")).innerHTML = cell);
     }
-    addRow(['immagine', "pc", "1", "500"]);
+    addRow(['<img src="./img/foto1.jpg" alt="pc" style="width:150px">', "pc", "1", "500"]);
+    // addRow(['<img src="./img/foto2.jpg" alt="pc" style="width:150px">', "pc", "1", "500"]);
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
